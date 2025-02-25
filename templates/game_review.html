@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Game Review - {{ game.name }}{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center md:col-span-1">
+        <img src="{{ url_for('static', filename='covers/' + game.image_url) }}" 
+             alt="{{ game.name }} Cover" class="w-full rounded-lg object-cover">
+        <p class="mt-4 text-gray-700 font-semibold">Game Cover</p>
+    </div>
+
+    <div class="md:col-span-2 grid grid-rows-2 gap-6">
+        <div class="grid grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-4 col-span-2">
+                <h3 class="text-lg font-semibold text-gray-800">Review</h3>
+                <p class="text-gray-600 mt-2">{{ game.review }}</p>
+            </div>
+            <div class="rounded-lg text-white font-bold flex items-center justify-center"
+                 style="background-color: {% if game.rating >= 80 %} #22c55e {% elif game.rating >= 50 %} #facc15 {% else %} #ef4444 {% endif %};">
+                <span class="text-[7rem] leading-none">{{ game.rating }}</span>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Description</h3>
+            <p class="text-gray-600 mt-2">{{ game.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

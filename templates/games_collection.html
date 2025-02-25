@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_collection.css') }}">
+{% endblock %}
+
+{% block title %}My Collection{% endblock %}
+
+{% block content %}
+    <h2 class="text-2xl font-semibold mb-6 text-center">My Game Collection</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for game in games %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg">
+            <!-- Cover -->
+            <a href="{{ url_for('games.game_review', game_id=game.id) }}" class="block w-full">
+                <img src="{{ url_for('static', filename='covers/' + game.image_url) }}" 
+                     alt="{{ game.title }} Cover" 
+                     class="w-full h-[350px] object-cover">
+            </a>
+            <!-- Content -->
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">{{ game.title }}</h3>
+                <p class="text-gray-600 truncate">{{ game.description }}</p>
+                <p><a href="{{ url_for('games.game_review', game_id=game.id) }}" class="text-blue-600 hover:underline mt-2 block">View Details</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
