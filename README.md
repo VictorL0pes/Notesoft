@@ -25,7 +25,7 @@ O **Notesoft** é um projeto desenvolvido para a disciplina de **Desenvolvimento
 
 ### 3.1 Tecnologias Utilizadas
 
-- **Linguagem:** Python 3.x
+- **Linguagem:** Python 3
 - **Framework Web:** [Flask](https://flask.palletsprojects.com/)
 - **Front-end:** HTML5, CSS3 e JavaScript
 - **Gerenciamento de Dependências:** Utilização do arquivo `requirements.txt` para listar as bibliotecas necessárias.
@@ -79,7 +79,7 @@ Isso garante que todas as bibliotecas necessárias, conforme listadas no arquivo
 
 ## 4. Execução do Projeto
 
-1. Rode o comando `python run.py` no terminal.
+1. Rode o comando `python app.py` no terminal.
 2. Abra o navegador e acesse o endereço:
 
    ```
@@ -99,5 +99,3 @@ Isso garante que todas as bibliotecas necessárias, conforme listadas no arquivo
   Para ajustes de configuração, como a definição de variáveis sensíveis ou parâmetros específicos, recomenda-se utilizar arquivos de configuração ou variáveis de ambiente, garantindo maior flexibilidade e segurança.
 
 Seguindo estas orientações, seu ambiente de desenvolvimento estará pronto para executar e depurar o projeto Notesoft de forma eficiente.
-
-
