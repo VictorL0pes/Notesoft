@@ -63,13 +63,6 @@ Este guia apresenta os passos necessários para configurar e iniciar o projeto N
      python -m venv venv
      venv\Scripts\activate
      ```
-
-2. Configure sua IDE para utilizar o interpretador Python do ambiente virtual recém-criado:
-   - **No PyCharm:**  
-     Vá em **File > Settings > Project: [Nome do Projeto] > Python Interpreter** e selecione o interpretador localizado na pasta `venv`.
-   - **No VS Code:**  
-     Utilize a paleta de comandos (Ctrl+Shift+P ou Cmd+Shift+P) e selecione **Python: Select Interpreter**, escolhendo o interpretador dentro da pasta `venv`.
-
 ---
 
 ## 3. Instalação das Dependências
@@ -84,47 +77,13 @@ Isso garante que todas as bibliotecas necessárias, conforme listadas no arquivo
 
 ---
 
-## 4. Configuração da Run Configuration
+## 4. Execução do Projeto
 
-O ponto de entrada da aplicação é o script `run.py`. Configure sua IDE para executar este arquivo:
-
-- **No PyCharm:**
-  1. Vá em **Run > Edit Configurations...**
-  2. Clique no ícone **+** para adicionar uma nova configuração e selecione **Python**.
-  3. Em **Script path**, aponte para o arquivo `run.py`.
-  4. Certifique-se de que o interpretador está definido como o ambiente virtual criado.
-  5. Salve a configuração.
-
-- **No VS Code:**
-  1. Abra a paleta de comandos e selecione **Debug: Open launch.json** para criar ou editar o arquivo de configuração.
-  2. Configure uma entrada para executar `run.py`, por exemplo:
-  
-     ```json
-     {
-         "version": "0.2.0",
-         "configurations": [
-             {
-                 "name": "Run Notesoft",
-                 "type": "python",
-                 "request": "launch",
-                 "program": "${workspaceFolder}/run.py",
-                 "console": "integratedTerminal"
-             }
-         ]
-     }
-     ```
-  3. Salve o arquivo `launch.json`.
-
----
-
-## 5. Execução do Projeto
-
-1. Execute a run configuration criada na sua IDE.
-2. O script `run.py` iniciará o servidor de desenvolvimento do Flask.
-3. Abra o navegador e acesse o endereço:
+1. Rode o comando `python run.py` no terminal.
+2. Abra o navegador e acesse o endereço:
 
    ```
-   http://localhost:5000
+   http://localhost:5001
    ```
 
    para visualizar a aplicação em funcionamento.
