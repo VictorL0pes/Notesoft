@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from routes.main import init_routes
+from routes import init_routes
 
 db = SQLAlchemy()
 
